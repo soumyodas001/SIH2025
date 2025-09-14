@@ -5,46 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IndiCultura</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./output.css">
-    <link rel="icon" href="./images/logoNoBg.png" type="image/x-icon">
+    <link rel="stylesheet" href="../output.css">
+    <link rel="icon" href="../images/logoNoBg.png" type="image/x-icon">
 </head>
 <body data-theme="caramellatte">
-    <div id="navbar" class="flex justify-centeralign items-center w-full h-fit p-3 pb-5 font-serif bg-gradient-to-b from-[#feecd3] from-80% to-[#fff7ed]">
+    <div id="navbar" class="flex justify-center items-center w-full h-fit p-3 pb-5 font-serif bg-gradient-to-b from-[#feecd3] from-80% to-[#fff7ed]">
         <div id="logo" class="flex justify-center items-center">
-            <img class="size-10 rounded-full mx-1" src="./images/logoNoBg.png" alt="">
+            <img class="size-10 rounded-full mx-1" src="../images/logoNoBg.png" alt="">
             <h1 class=" font-bold yello px-3 text-2xl">IndiCultura</h1>
         </div>
-        <div id="extra-space" class="grow"></div>
-        <div id="nav-items" class="flex align-middle mr-32 rounded-2xl">
-            <a id="home" class="nav-items nav-items" href="./index.html">Home</a>
-            <a id="quiz" class="nav-items" href="./quiz/quiz.html">Quiz</a>
-            <a id="market-place" class="nav-items" href="./mplace/mplace.html">Market place</a>
-            <a id="about" class="nav-items" href="./about/about.html">About Us</a>
-        </div>
-        <div id="extra-space" class="grow"></div>
-        <a id="login" class="nav-items" href="./login/login.html">Login</a>
     </div>
 
     <!------- Hero section ------->
 
-    <main class="h-fit">
-        <div id="hero-sectio" class="px-15 grid grid-cols-2">
-            <div>
-                <div id="hero-text">
-                    <h1 class=" font-serif text-6xl mt-15">Discover India's</h1>
-                    <h1 class=" font-serif text-6xl mt-2">Rich Heritage</h1>
+    <main class="h-fit flex justify-center items-center p-10">
+        <div class="w-90 h-fit border-2 rounded-2xl p-6 bg-white shadow-lg relative">
+            <h2 class="text-2xl font-bold text-center mb-6">Login</h2>
+            <form id="loginForm" class="flex flex-col gap-4">
+                <div class="form-control z-2">
+                    <label class="label">
+                        <span class="label-text">Email</span>
+                    </label>
+                    <input type="email" id="email" placeholder="Enter your email" class="input input-bordered" required />
                 </div>
-                <div class="hero-btn mt-15">
-                    <a href="./mplace/mplace.html" class="btn btn-outline btn-accent">Visit Market place
-                        <i class="fa-solid fa-store size-fit"></i>
-                    </a>
-                    <!-- <a href="./culture/culture.html" class="ml-4 btn btn-outline btn-accent">Know About Your Culture</a> -->
+                <div class="form-control z-2">
+                    <label class="label">
+                        <span class="label-text">Password</span>
+                    </label>
+                    <input type="password" id="password" placeholder="Enter your password" class="input input-bordered" required />
+                    <label class="label">
+                        <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                    </label>
                 </div>
-            </div>
-            <div>
-                <img class="size-100 ml-10 relative" src="./images/india.png" alt="">
-                <img class="absolute animate-[spin_20s_linear_infinite] mix-blend-multiply opacity-40 size-80 top-28 right-67" src="../images/design1.jpg" alt="design">
-            </div>
+                <button type="submit" class="btn btn-accent mt-2 z-2">Login</button>
+                <div class="text-center mt-4 z-2">
+                    <p>Don't have an account? <a href="./signup.html" class="link link-primary">Sign up</a></p>
+                </div>
+            </form>
+        <!-- <img class="z-1 absolute animate-[spin_20s_linear_infinite] mix-blend-multiply opacity-30 size-80 top-0" src="../images/design1.jpg" alt="design"> -->
         </div>
     </main>
     
@@ -53,10 +51,10 @@
 
     <footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10 pt-12 bg-gradient-to-t from-[#feecd3] from-90% to-[#fff7ed]">
         <nav class="grid grid-flow-col gap-4">
-            <a class="link link-hover" href="./contact/contact.html">Contact</a>
-            <a class="link link-hover" href="./quiz/quiz.html">Quiz</a>
-            <a class="link link-hover" href="./mplace/mplace.html">Market place</a>
-            <a class="link link-hover" href="./about/about.html">About us</a>
+            <a class="link link-hover" href="../contact/contact.html">Contact</a>
+            <a class="link link-hover" href="../quiz/quiz.html">Quiz</a>
+            <a class="link link-hover" href="../mplace/mplace.html">Market place</a>
+            <a class="link link-hover" href="../about/about.html">About us</a>
         </nav>
         <nav>
             <div class="grid grid-flow-col gap-4">
@@ -101,6 +99,6 @@
     </footer>
 
     <!-- JavaScript file -->
-    <script src="script.js"></script>   
+    <script src="./login.js"></script>   
 </body>
 </html>
