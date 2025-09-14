@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndiCultura</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../output.css">
+    <link rel="icon" href="../images/logoNoBg.png" type="image/x-icon">
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes counterAnimation {
+            from { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            to { transform: scale(1); }
+        }
+        .counter.animated {
+            animation: counterAnimation 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="h-screen" data-theme="caramellatte">
+    <div id="navbar" class="flex justify-centeralign items-center w-full h-fit p-3 pb-5 font-serif bg-gradient-to-b from-[#feecd3] from-80% to-[#fff7ed]">
+        <div id="logo" class="flex justify-center items-center">
+            <img class="size-10 rounded-full mx-1" src="../images/logoNoBg.png" alt="">
+            <h1 class=" font-bold yello px-3 text-2xl">IndiCultura</h1>
+        </div>
+        <div id="extra-space" class="grow"></div>
+        <div id="nav-items" class="flex align-middle mr-32 rounded-2xl">
+            <a id="home" class="nav-items nav-items" href="../index.html">Home</a>
+            <a id="quiz" class="nav-items" href="../quiz/quiz.html">Quiz</a>
+            <a id="market-place" class="nav-items" href="../mplace/mplace.html">Market place</a>
+            <a id="about" class="nav-items" href="../about/about.html">About Us</a>
+        </div>
+        <div id="extra-space" class="grow"></div>
+        <a id="login" class="nav-items" href="../login/login.html">Login</a>
+    </div>
+
+    <!------- Hero section ------->
+
+    <main class="min-h-screen bg-[#fff7ed] p-8">
+        <!-- Hero Section -->
+        <div class="container mx-auto">
+            <h1 class="text-4xl font-bold text-[#4a3e3e] mb-8">Crafts of Coastal India — A Celebration</h1>
+            
+            <!-- Video and Info Section -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Video Player Column -->
+                <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6 fade-in">
+                    <div class="aspect-w-16 aspect-h-9 mb-6">
+                        <video id="craftVideo" class="w-full rounded-lg" poster="../images/video.mp4">
+                            <source src="../images/video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                        <!-- Custom Video Controls -->
+                        <div class="mt-4 flex items-center space-x-4 bg-gray-100 p-3 rounded-lg">
+                            <button id="playPauseBtn" class="btn btn-primary btn-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </button>
+                            <input type="range" id="videoProgress" class="range range-primary flex-grow" min="0" max="100" value="0">
+                            <div class="flex items-center space-x-2">
+                                <button id="muteBtn" class="btn btn-ghost btn-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M17.95 4.05a9 9 0 010 15.9M6.343 9.343l7.071 7.071M3.515 12.172l7.071-7.071" />
+                                    </svg>
+                                </button>
+                                <input type="range" id="volumeControl" class="range range-primary w-24" min="0" max="100" value="100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prose max-w-none">
+                        <p class="text-gray-600 mb-6">
+                            This short film explores traditional coastal handicrafts: coconut shell carving, terracotta potteries and handmade jewellery. Each piece is crafted by local artisans using age-old techniques passed down through generations. Learn about materials, process and the community that makes these pieces possible.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Facts Column -->
+                <div class="bg-white rounded-lg shadow-lg p-6 fade-in">
+                    <h2 class="text-2xl font-semibold text-[#4a3e3e] mb-6">Quick Facts</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Origin: Coastal villages (Kerala, Bengal)</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Materials: Coconut shell, clay, reclaimed wood</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Handmade: Each piece unique</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Support local artisans</span>
+                        </li>
+                    </ul>
+
+                    <!-- Featured Artisans -->
+                    <div class="mt-8">
+                        <h2 class="text-2xl font-semibold text-[#4a3e3e] mb-6">Featured Artisans</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <img src="../images/aktara.jpg" alt="Ratan Rathore" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <h3 class="font-semibold">Ratan Rathore</h3>
+                                    <p class="text-sm text-gray-600">Coconut shell crafts — 18 yrs</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <img src="../images/knthaembroiderry.jpg" alt="Gauri Gupta" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <h3 class="font-semibold">Gauri Gupta</h3>
+                                    <p class="text-sm text-gray-600">Katha Embroidery — 15 yrs</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-full mt-6" onclick="window.my_modal_5.showModal()">About the Artisans</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="stat bg-white rounded-lg shadow-lg p-6 text-center fade-in">
+                    <div class="stat-title text-primary">Featured Artisans</div>
+                    <div class="stat-value"><span class="counter" data-target="50">0</span>+</div>
+                </div>
+                <div class="stat bg-white rounded-lg shadow-lg p-6 text-center fade-in">
+                    <div class="stat-title text-primary">Traditional Crafts</div>
+                    <div class="stat-value"><span class="counter" data-target="30">0</span>+</div>
+                </div>
+                <div class="stat bg-white rounded-lg shadow-lg p-6 text-center fade-in">
+                    <div class="stat-title text-primary">States Covered</div>
+                    <div class="stat-value"><span class="counter" data-target="15">0</span>+</div>
+                </div>
+                <div class="stat bg-white rounded-lg shadow-lg p-6 text-center fade-in">
+                    <div class="stat-title text-primary">Years of Tradition</div>
+                    <div class="stat-value"><span class="counter" data-target="1000">0</span>+</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Artisan Modal -->
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <form method="dialog" class="modal-box">
+                <h3 class="font-bold text-lg mb-4">Featured Artisan: Raj Kumar</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <img src="../images/wallart.jpg" alt="Artisan Raj Kumar" class="w-24 h-24 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-semibold">Master Craftsman</h4>
+                            <p class="text-gray-600">30 years of experience</p>
+                        </div>
+                    </div>
+                    <p class="py-4">Raj Kumar is a master craftsman specializing in traditional wall art. With three decades of experience, he has preserved and innovated the ancient techniques of Indian wall art decoration.</p>
+                    <div class="space-y-2">
+                        <h5 class="font-semibold">Specializations:</h5>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Traditional Wall Art</li>
+                            <li>Mural Paintings</li>
+                            <li>Heritage Restoration</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="font-semibold">Contact:</h5>
+                        <p class="text-gray-600">Email: raj.kumar@indicultura.com</p>
+                        <p class="text-gray-600">Phone: +91 98765 43210</p>
+                    </div>
+                </div>
+                <div class="modal-action">
+                    <button class="btn">Close</button>
+                </div>
+            </form>
+        </dialog>
+    </main>
+    
+    <!------- Footer ------->
+
+    <footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10 pt-12 bg-gradient-to-t from-[#feecd3] from-90% to-[#fff7ed]">
+        <nav class="grid grid-flow-col gap-4">
+            <a class="link link-hover" href="../contact/contact.html">Contact</a>
+            <a class="link link-hover" href="../quiz/quiz.html">Quiz</a>
+            <a class="link link-hover" href="../mplace/mplace.html">Market place</a>
+            <a class="link link-hover" href="../about/about.html">About us</a>
+        </nav>
+        <nav>
+            <div class="grid grid-flow-col gap-4">
+            <a>
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                </svg>
+            </a>
+            <a>
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+                </svg>
+            </a>
+            <a>
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="fill-current">
+                <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+                </svg>
+            </a>
+            </div>
+        </nav>
+        <aside>
+            <p>Copyright ©IndiCultura - 2025 All right reserved by IndiCultura</p>
+        </aside>
+    </footer>
+
+    <!-- JavaScript file -->
+    <script src="about.js"></script>   
+</body>
+</html>
